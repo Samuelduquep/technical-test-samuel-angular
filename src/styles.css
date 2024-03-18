@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* Basic root style */
+:root {
+  /* Colors */
+  --primary-color: #008000; /* Green */
+  --secondary-color: #ffffff; /* White */
+  --gray-color: #ededed;
+
+  /* Fonts */
+  --primary-font: Arial, sans-serif;
+  --secondary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Font sizes */
+  --font-size: 16px;
+}
+
+/* Global styles */
+body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size);
+  background-color: var(--gray-color);
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Other styles as needed */

@@ -1,0 +1,20 @@
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th class="header">Time</th>
+                <th class="header">Temperature</th>
+                <th class="header">Wind Speed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (time of data.time; track $index) {
+            <tr>
+                <td>{{data.time[$index]}}</td>
+                <td>{{data.temperature[$index]}}</td>
+                <td>{{data.wind_speed[$index]}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

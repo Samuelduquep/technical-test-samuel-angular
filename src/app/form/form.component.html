@@ -1,0 +1,49 @@
+@if (isValidate) {
+<div>
+    <h1 class="info_text">Your information has been successfully sent.</h1>
+    <p class="info_text_ph">We will get back to your shortly</p>
+</div>
+<button routerLink="/weather" type="button" class="btn" aria-label="Validate" title="Validate the form" role="button">
+    Return to Weather
+</button>
+
+} @else {
+<form class="form" (submit)="onSubmit($event)" noValidate>
+    <div class="form__field">
+        <label class="form__label" for="name">Mail</label>
+        <input (change)="onChange($event)" type="email" id="emails"
+            placeholder="Insert multiple emails separated by commas" autoComplete="off" aria-label="Emails"
+            aria-required="true" noValidate>
+        @if (newErrors.emails) {
+        <div class="form__error">
+            <span>Incorrect email/s. Please try again.</span>
+        </div>
+        }
+
+    </div>
+    <div class="form__field">
+        <label class="form__label" for="name">Amount</label>
+        <input (change)="onChange($event)" type="text" id="amount"
+            placeholder="Insert an amount with € symbol and decimals" autoComplete="off" aria-label="Emails"
+            aria-required="true">
+        @if (newErrors.amount) {
+        <div class="form__error">
+            <span>This field only accept numbers with decimals and € symbol.</span>
+        </div>
+        }
+    </div>
+    <div class="form__field">
+        <label class="form__label" for="name">Url</label>
+        <input (change)="onChange($event)" type="url" id="url" placeholder="Insert a URL" autoComplete="off"
+            aria-label="Emails" aria-required="true">
+        @if (newErrors.url) {
+        <div class="form__error">
+            <span>Incorrect URL. Please try again.</span>
+        </div>
+        }
+
+    </div>
+
+    <button class="btn" type="submit">Validate</button>
+</form>
+}
